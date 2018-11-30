@@ -1,0 +1,6 @@
+<mat-card-content class="tasks" cdkDropList [cdkDropListData]="tasks" (cdkDropListDropped)="drop($event)">
+    <div cdkDrag [cdkDragData]="task" *ngFor="let task of tasks" class="task">
+        {{ task }}
+        <!-- <div class="custom_placeholder" *cdkDragPlaceholder></div> -->
+    </div>
+</mat-card-content>

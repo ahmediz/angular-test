@@ -1,0 +1,21 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  margin:0;
+  background: #eee;
+}
+
+.boards {
+  display: flex;
+  margin: 0 -5px;
+  padding: 30px;
+
+ > div {
+    padding: 0 5px;
+    flex: 1;
+  }
+}
+
+mat-spinner {
+  margin: 30px auto;
+}
