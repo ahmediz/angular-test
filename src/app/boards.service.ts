@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {Subject} from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class BoardsService {
   boards: any[];
@@ -12,12 +12,12 @@ export class BoardsService {
 
   constructor(private http: HttpClient) {
     this.isLoading.next(true);
-    this.http.get('https://angular-test-290e5.firebaseio.com/boards.json').subscribe(
-      boards => {
+    this.http
+      .get("https://angular-test-290e5.firebaseio.com/boards.json")
+      .subscribe(boards => {
         this.setBoards(boards);
         this.isLoading.next(false);
-      }
-    );
+      });
   }
 
   setBoards(boards) {
@@ -30,7 +30,9 @@ export class BoardsService {
   }
 
   saveBoards(boards) {
-    this.http.put('https://angular-test-290e5.firebaseio.com/boards.json', boards).subscribe();
+    this.http
+      .put("https://angular-test-290e5.firebaseio.com/boards.json", boards)
+      .subscribe();
     this.boardsChanged.next(boards);
   }
 }

@@ -1,12 +1,10 @@
 <mat-spinner *ngIf="!boards"></mat-spinner>
 
 <div *ngIf="boards" cdkDropListGroup class="boards">
-    <div *ngFor="let board of boards">
-        <mat-card>
-            <mat-card-title>
-                {{ board.title }}
-            </mat-card-title>
-            <app-tasks [tasks]="board.tasks" [changedBoards]="boards"></app-tasks>
-        </mat-card>
-    </div>
+  <div *ngFor="let board of boards">
+    <mat-card>
+      <mat-card-title> {{ board.title }} </mat-card-title>
+      <app-tasks [tasks]="board.tasks" [changedBoards]="boards"></app-tasks>
+    </mat-card>
+  </div>
 </div>
