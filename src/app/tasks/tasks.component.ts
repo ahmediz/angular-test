@@ -38,6 +38,7 @@ export class TasksComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
+      console.log(event.previousContainer.data);
     }
     this.boardsService.saveBoards(this.changedBoards);
   }
