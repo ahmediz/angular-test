@@ -1,16 +1,16 @@
-import {Component, OnInit, Input} from "@angular/core";
+import { Component, OnInit, Input } from '@angular/core';
 import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
   CdkDrag
-} from "@angular/cdk/drag-drop";
-import {BoardsService} from "src/app/boards.service";
+} from '@angular/cdk/drag-drop';
+import { BoardsService } from 'src/app/boards.service';
 
 @Component({
-  selector: "app-tasks",
-  templateUrl: "./tasks.component.html",
-  styleUrls: ["./tasks.component.scss"]
+  selector: 'app-tasks',
+  templateUrl: './tasks.component.html',
+  styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
   @Input() tasks: string[];
@@ -19,7 +19,7 @@ export class TasksComponent implements OnInit {
 
   ngOnInit() {
     const newBoards = this.changedBoards.map(item =>
-      !item.tasks ? {tasks: [], title: item.title} : item
+      !item.tasks ? { tasks: [], title: item.title } : item
     );
     this.boardsService.saveBoards(newBoards);
   }
